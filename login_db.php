@@ -13,6 +13,7 @@
     if ($get_user){
        // do sweet-alert jobs success
        $plantext = base64_encode($get_user);
+       $ciphering = "AES-128-CTR";
        $iv_length = openssl_cipher_iv_length($ciphering);
        $options = 0;
        $encryption_iv = '1234567891011121';
