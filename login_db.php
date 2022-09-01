@@ -1,5 +1,5 @@
 <?php
-   if ($_POST['log']){
+   if (isset($_POST['log'])){
     $server_db = "localhost"; 
     $username_db = "root";
     $password_db= "";
