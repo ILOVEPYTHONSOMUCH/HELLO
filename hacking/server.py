@@ -24,5 +24,5 @@ while True:
       data.send(cmd.encode("utf-8"))
       output = dara.recv(4096).decode("utf-8")
       print(output)
-    except:
+     except:
       pass
